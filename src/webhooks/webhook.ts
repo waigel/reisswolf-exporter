@@ -44,7 +44,9 @@ export const sendWebhook = async (
     )
     .addField(
       "Seiten",
-      document.props.find((x) => x.name === "postbox:pages")?.value ?? "N/A",
+      document.props
+        .find((x) => x.name === "postbox:pages")
+        ?.value.toString() ?? "N/A",
       true
     )
     .addField("Tags", document.tags.join(", "), true)
