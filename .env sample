@@ -1,0 +1,11 @@
+RESSWOLF_INSTANCE=p<xxxx>
+RESSWOLF_USERNAME=<companyName>
+RESSWOLF_PASSWORD=<password>
+
+AWS_ACCESS_KEY_ID=<awsKeyId>
+AWS_SECRET_ACCESS_KEY=<awsAccessKey>
+AWS_REGION=eu-central-1
+AWS_BUCKET_NAME=<bucketName>
+
+DISCORD_WEBHOOK_URL=<webhookUrl>
+COMPANY_DISPLAY_NAME<displayNameForDiscord>
