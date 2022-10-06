@@ -1,11 +1,9 @@
-//https://p2682.reisswolf.fit/postbox/query?filter=All&parentPath=null&offset=0&max=25&cache=false
-//https://p2682.reisswolf.fit/login/authenticate
-
 import { createS3FileStorage } from "./fileStorage/s3";
 import { createReisswolfClient } from "./reisswolf/client";
 import { sendWebhook } from "./webhooks/webhook";
+import { config } from "dotenv";
 
-require("dotenv").config();
+config();
 
 const client = createReisswolfClient();
 const s3FileStorage = createS3FileStorage();

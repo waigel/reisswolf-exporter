@@ -66,7 +66,7 @@ export const createReisswolfClient = () => {
           },
         }
       )
-      .then(({ headers, data, status }) => {
+      .then(({ status }) => {
         throw new Error("Login failed, status code: " + status);
       })
       .catch(({ response }: AxiosError) => {
