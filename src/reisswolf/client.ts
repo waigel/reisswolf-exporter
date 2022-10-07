@@ -95,12 +95,21 @@ export const createReisswolfClient = () => {
 
   const fetchPoxbox = async (): Promise<ReisswolfDocument[]> => {
     return await instance
-      .get<ReisswolfDocument[]>("/postbox/query", {
+      .get<ReisswolfDocument[] | string>("/postbox/query", {
         params: {
           filter: "Today",
         },
       })
-      .then(({ data }) => data);
+      .then(({ data }) => {
+        if (typeof data === "string") {
+          return [];
+        }
+        return data;
+      })
+      .catch((error) => {
+        console.error(error);
+        return [];
+      });
   };
 
   const getCSRFTOKEN = async () => {

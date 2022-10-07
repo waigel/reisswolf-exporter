@@ -15,8 +15,8 @@ const s3FileStorage = createS3FileStorage();
   await client.getCSRFTOKEN();
   const documents = await client.fetchPoxbox();
 
-  console.log(documents);
-  documents?.forEach(async (document) => {
+  console.log("documents", documents);
+  documents.forEach(async (document) => {
     const props = document.props;
     const read = props?.find((prop) => prop.name === "postbox:isRead");
     if (read?.value === false) {
