@@ -19,7 +19,8 @@ const s3FileStorage = createS3FileStorage();
   documents.forEach(async (document) => {
     const props = document.props;
     const read = props?.find((prop) => prop.name === "postbox:isRead");
-    if (read?.value === false) {
+    console.log("read", read?.value);
+    if (read?.value !== true) {
       console.log(`Process document ${document.uuid}`);
       await client.downloadDocument(document);
 
