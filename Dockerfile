@@ -16,4 +16,4 @@ RUN ls -al
 RUN npm ci --production --quit
 COPY --from=builder /usr/src/app/dist/ dist/
 USER node
-ENTRYPOINT ["node", "dist/app.js"]
+ENTRYPOINT ["node", "dist/http-server.js"]
